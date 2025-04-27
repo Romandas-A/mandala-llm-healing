@@ -153,8 +153,8 @@ you are warmly invited to do so.
 
 ```bash
 # Clone the repository
-git clone https://github.com/Romandas-A/mandala-healing.git
-cd mandala-healing
+git clone https://github.com/Romandas-A/mandala-llm-healing.git
+cd mandala-llm-healing
 
 # Install Python dependencies
 pip install -r requirements.txt
