@@ -1,4 +1,23 @@
 # permanent_inject.py
+#
+# This script:
+# - Loads a GPT-2 model and tokenizer,
+# - Defines a method to apply small healing corrections directly into model weights,
+# - Specifically applies healing by modifying the bias vector of a transformer MLP layer,
+# - Allows saving the healed model and tokenizer to a new directory.
+#
+# This module supports:
+# - Applying minimal surgical edits to LLM weights after healing,
+# - Safely injecting knowledge repairs without full model retraining,
+# - Preparing permanently corrected models after Mandala-Healing cycles.
+#
+# ---
+# Part                      | What it does
+# ---------------------------|--------------------------------------------------------
+# load_model_and_tokenizer() | Loads GPT-2 model and tokenizer from Hugging Face.
+# inject_bias_delta()        | Adds a small healing delta to the bias vector of a selected transformer block.
+# save_healed_model()        | Saves the healed model and tokenizer to a specified folder.
+# __main__ block             | Demonstrates an example healing injection and saving process.
 
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
