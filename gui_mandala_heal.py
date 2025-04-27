@@ -1,4 +1,24 @@
 # gui_mandala_heal.py
+#
+# This script:
+# - Loads sentence activations from a GPT-2 model,
+# - Projects them into 2D Mandala space using UMAP,
+# - Displays an interactive plot (matplotlib),
+# - Allows clicking on points to select fragile or interesting knowledge branches,
+# - Simulates a healing delta based on selected points.
+#
+# This GUI supports:
+# - Manual exploration of model knowledge geometry,
+# - Manual identification of asymmetric or broken knowledge clusters,
+# - Preparation for healing operations (via bias delta injection).
+#
+# ---
+# Part                      | What it does
+# ---------------------------|--------------------------------------------------------
+# onclick(event)             | Captures mouse click event, finds nearest projected point.
+# show_projection(points)    | Displays 2D scatter plot of projected knowledge points.
+# simulate_healing(model, selected_indices) | Creates a small synthetic healing delta based on selected points.
+# __main__ block             | Loads model, projects sample sentences, launches GUI interaction.
 
 import matplotlib.pyplot as plt
 import numpy as np
