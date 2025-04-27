@@ -65,6 +65,32 @@ designed to be fully **open-source**, **transparent**, and **extendable**.
 > After Pretraining ➔ Fine-tuning ➔  
 > **now comes Self-Healing and Self-Evolution.**
 
+
+### 🔥 Why Mandala-Healing is Different
+
+Traditional AI training stops after pretraining and fine-tuning.  
+Models are left with hidden inconsistencies, hallucinations, and gaps —  
+with no way to grow or correct themselves without expensive retraining.
+
+**Mandala-Healing proposes a new path:**
+
+- **Healing without external datasets.**  
+  The model generates its own sub-questions and simulations to fill gaps, using only its internal knowledge.
+
+- **Healing without full retraining.**  
+  Corrections are applied as small, local edits — no need to re-train on millions of samples.
+
+- **Self-evolution.**  
+  Models can improve continuously, detecting and healing weak knowledge branches autonomously.
+
+- **Geometry as intelligence.**  
+  The symmetry, structure, and balance of the internal Mandala becomes a real indicator of knowledge health — not just visualization.
+
+---
+
+> 🧠 **Mandala-Healing is not fine-tuning. It is not prompt engineering.  
+> It is a new way for models to grow, repair, and evolve — using their own structure and logic.**
+
 ---
 
 ## 🛠️ Repository Contents
