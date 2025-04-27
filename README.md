@@ -2,6 +2,19 @@
 
 > Post-training self-healing method for large language models based on Mandala symmetry analysis and autonomous knowledge refinement.
 
+> **Field:** Artificial Intelligence · Machine Learning · LLM Post-Training · Self-Healing Models
+
+---
+
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+  </a>
+  <a href="https://github.com/Romandas-A/mandala-healing">
+    <img src="https://img.shields.io/badge/Built%20with-%F0%9F%A7%A0%20Mandala%20Healing-brightgreen" alt="Built with Mandala Healing">
+  </a>
+</p>
+
 ---
 
 ## ✨ Overview
@@ -16,7 +29,7 @@ Until now.
 
 - Analyze the model’s **internal knowledge geometry**,
 - Detect **weak or fragile branches** where knowledge is broken or missing,
-- Trigger **self-healing cycles** — where the model generates sub-questions and simulations to fill gaps,
+- Trigger **self-healing cycles** — where the model generates sub-questions and internal simulations to fill gaps,
 - **Test** if the healing improves answers,
 - **Permanently inject** safe, minimal corrections into model weights.
 
@@ -37,7 +50,7 @@ fully **open-source**, **transparent**, and **extendable**.
 - **Broken knowledge** (missing facts, hallucinations, contradictions) manifests as **asymmetries, distortions, or fragile branches**.
 
 By detecting and healing these weak areas,  
-the model can **self-perfect** over time — without human intervention.
+the model can **self-perfect** over time — without requiring external data or human retraining.
 
 ---
 
@@ -46,52 +59,53 @@ the model can **self-perfect** over time — without human intervention.
 Mandala-Healing is designed as a **post-training evolution** phase —  
 **not a replacement** for traditional pretraining or fine-tuning.
 
-- **Traditional pretraining** (on large datasets) is still required to give the model its initial basic knowledge.
-- **Fine-tuning** may still be used to specialize a model for certain domains.
+- **Traditional pretraining** (on large datasets) remains essential to give the model its basic world knowledge.
+- **Fine-tuning** remains useful to specialize a model for specific domains.
 
-**Mandala-Healing begins after training is finished:**
+**Mandala-Healing begins only after traditional training is finished:**
 
 - It does not rely on new external datasets.
-- It does not need expensive re-training cycles.
-- It focuses on **detecting and repairing internal weaknesses** that were left behind after traditional training.
+- It does not require expensive re-training cycles.
+- It focuses on **detecting and repairing internal weaknesses** that were left behind during training.
 
-In some cases, Mandala-Healing may even **generate new knowledge**:  
-- By identifying missing connections,
-- By completing logical structures,
-- By repairing fragile branches based on the model’s internal symmetry.
+In some cases, Mandala-Healing may even **generate new knowledge**:
 
-Thus, Mandala-Healing enables models to **grow beyond** their training datasets —  
-improving themselves autonomously, without needing new labeled data.
+- By identifying missing logical connections,
+- By completing incomplete knowledge structures,
+- By repairing fragile branches based on internal Mandala symmetry.
+
+Thus, Mandala-Healing enables models to **grow beyond** their original training datasets —  
+self-improving autonomously through internal geometric healing.
 
 ---
 
-### 🛠 The Core Healing Cycle
+## 🛠️ The Core Healing Cycle
 
-1. **Visualize Knowledge** — Project internal activations into a Mandala using UMAP/t-SNE.
-2. **Detect Fragility** — Identify asymmetric or broken knowledge branches.
-3. **Self-Ask and Simulate** — Model generates sub-questions and imagined answers internally.
-4. **Self-Heal** — Propose small memory corrections (e.g., bias vector updates).
-5. **Self-Test** — Healing is accepted only if internal testing shows real answer improvement.
-6. **Permanent Repair** — Safe healing edits are injected directly into model weights.
+1. **Visualize Knowledge** — Project hidden-state activations into a 2D Mandala using UMAP or t-SNE.
+2. **Detect Fragility** — Identify asymmetric, weak, or broken knowledge branches.
+3. **Self-Ask and Simulate** — The model generates internal sub-questions to explore gaps.
+4. **Self-Heal** — Propose small weight edits (e.g., tiny bias vector updates) based on internal simulations.
+5. **Self-Test** — Healing is accepted only if testing shows improved answers.
+6. **Permanent Repair** — Successful healing edits are injected directly into model weights.
 
 ---
 
 ## 🔥 What Makes Mandala-Healing Different
 
 - **Self-generated healing.**  
-  Healing comes from inside the model — no external datasets needed.
+  Healing comes entirely from within the model — no new external data is needed.
 
 - **Minimal invasive edits.**  
-  Small corrections (e.g., bias adjustments) instead of expensive full retraining.
+  Healing uses small, safe internal corrections instead of costly full retraining.
 
 - **Geometry becomes intelligence.**  
-  Symmetry and balance of the Mandala reflect real knowledge health.
+  Symmetry and balance of the Mandala become measurable indicators of knowledge health.
 
 - **True self-evolution.**  
-  The model can autonomously refine itself, repair errors, and grow smarter over time.
+  The model can refine itself repeatedly, repairing errors and growing smarter over time.
 
 - **Healing across multiple projections.**  
-  One view is not enough — Mandala-Healing explores different angles, layers, and projections to build a robust self-healing process.
+  Healing is not based on a single 2D view — Mandala-Healing explores many angles, layers, and projections to ensure robust evolution.
 
 ---
 
@@ -104,17 +118,20 @@ improving themselves autonomously, without needing new labeled data.
 ## 🌱 How the Idea Emerged
 
 Mandala-Healing is an open idea —  
-it was born while walking in a park and having conversations with ChatGPT,  
-thinking about how models could heal and grow after training.
+it was born while walking in a park and having deep conversations with ChatGPT,  
+thinking about how models could heal and grow autonomously after their traditional training.
 
-This repository is a **prototype and exploration**:  
-- It is **not yet proven** by large-scale experiments,
-- It is **offered freely** to the community to test, challenge, improve, or extend.
+This repository is a **prototype and exploration**:
 
-If you find it inspiring, useful, or if you want to build on it —  
+- It is **not yet validated** by large-scale experiments,
+- It is **freely offered** to the community — to test, challenge, improve, or extend.
+
+If you find it inspiring, useful, or if you want to build upon it —  
 you are warmly invited to do so.
 
 ❤️
+
+---
 
 ## 🛠️ Repository Contents
 
@@ -126,7 +143,7 @@ you are warmly invited to do so.
 | `mandala_projection.py` | Project internal activations into 2D Mandalas. |
 | `gui_mandala_heal.py` | Clickable GUI to manually explore and heal knowledge branches. |
 | `test_suite.py` | Simple exact and fuzzy answer evaluation tools. |
-| `permanent_inject.py` | Script to permanently apply healing deltas to model weights. |
+| `permanent_inject.py` | Script to permanently apply healing deltas into model weights. |
 | `autonomous_loop.py` | Prototype self-healing cycle: detect weakness ➔ self-ask ➔ heal. |
 | `examples/` | Example Jupyter notebooks to explore projections and self-healing.
 
@@ -136,7 +153,7 @@ you are warmly invited to do so.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USER/mandala-healing.git
+git clone https://github.com/Romandas-A/mandala-healing.git
 cd mandala-healing
 
 # Install Python dependencies
@@ -144,5 +161,3 @@ pip install -r requirements.txt
 
 # Play with the Healing GUI
 python gui_mandala_heal.py
-
----
