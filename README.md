@@ -10,8 +10,8 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
   </a>
-  <a href="https://github.com/Romandas-A/mandala-healing">
-    <img src="https://img.shields.io/badge/Built%20with-%F0%9F%A7%A0%20Mandala%20Healing-brightgreen" alt="Built with Mandala Healing">
+  <a href="https://github.com/Romandas-A/mandala-llm-healing">
+    <img src="https://img.shields.io/badge/Built%20with-%F0%9F%A7%A0%20Mandala%20Healing-brightgreen" alt="Built with Mandala LLM Healing">
   </a>
 </p>
 
