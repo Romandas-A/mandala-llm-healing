@@ -1,4 +1,23 @@
 # autonomous_loop.py
+#
+# This script:
+# - Asks a question to the model,
+# - Detects low confidence (bad answer),
+# - Generates a sub-question to explore the missing knowledge,
+# - Generates an imagined sub-answer,
+# - Heals the knowledge branch by proposing a small delta,
+# - Tests whether the healing is accepted or rejected.
+#
+# This matches exactly the idea of:
+# Self-question ➔ self-heal ➔ self-test ➔ evolve.
+#
+# ---
+# Part                  | What it does
+# ----------------------|-------------------------------------------
+# model_answer()         | Ask model a question, get generated text.
+# simple_confidence_check() | If answer is short or weird → healing is triggered.
+# autonomous_heal_cycle() | Full healing cycle for one question: detect ➔ sub-question ➔ sub-answer ➔ propose delta ➔ decide.
+# __main__ block         | Runs healing cycle on a list of example questions.
 
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
