@@ -41,6 +41,30 @@ the model can **self-perfect** over time — without human intervention.
 
 ---
 
+## ⚙️ Relation to Traditional Training
+
+Mandala-Healing is designed as a **post-training evolution** phase —  
+**not a replacement** for traditional pretraining or fine-tuning.
+
+- **Traditional pretraining** (on large datasets) is still required to give the model its initial basic knowledge.
+- **Fine-tuning** may still be used to specialize a model for certain domains.
+
+**Mandala-Healing begins after training is finished:**
+
+- It does not rely on new external datasets.
+- It does not need expensive re-training cycles.
+- It focuses on **detecting and repairing internal weaknesses** that were left behind after traditional training.
+
+In some cases, Mandala-Healing may even **generate new knowledge**:  
+- By identifying missing connections,
+- By completing logical structures,
+- By repairing fragile branches based on the model’s internal symmetry.
+
+Thus, Mandala-Healing enables models to **grow beyond** their training datasets —  
+improving themselves autonomously, without needing new labeled data.
+
+---
+
 ### 🛠 The Core Healing Cycle
 
 1. **Visualize Knowledge** — Project internal activations into a Mandala using UMAP/t-SNE.
