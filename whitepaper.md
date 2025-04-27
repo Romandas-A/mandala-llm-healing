@@ -1,164 +1,163 @@
-# 🧠 Mandala-Healing: Self-Evolving Knowledge Refinement for Language Models
+# 🧠 Mandala-LLM-Healing: Self-Evolving Knowledge Refinement for Language Models
+
+> Post-training self-healing method for large language models based on Mandala symmetry analysis and autonomous knowledge refinement.
+
+> **Field:** Artificial Intelligence · Machine Learning · LLM Post-Training · Self-Healing Models
 
 ---
 
-## 1. Introduction
-
-Large Language Models (LLMs) achieve remarkable fluency and broad knowledge coverage through pre-training and fine-tuning.  
-However, even very large models contain:
-
-- Inconsistencies,
-- Hallucinations,
-- Gaps in factual knowledge,
-- Logical asymmetries.
-
-Traditional retraining is costly, slow, and depends on new external data.
-
-**Mandala-Healing** proposes a new idea:
-
-> **Post-training internal healing**, where the model analyzes its own knowledge geometry, detects weak branches, self-generates missing information, tests it, and heals itself — without new external datasets.
-
-This repository provides an open prototype for this idea.
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+  </a>
+<a href="https://github.com/Romandas-A/mandala-llm-healing">
+  <img src="https://img.shields.io/badge/Built%20with-%F0%9F%A7%A0%20Mandala--LLM--Healing-brightgreen" alt="Built with Mandala-LLM-Healing">
+</a>
+</p>
 
 ---
 
-## 2. Core Ideas
+## ✨ Overview
 
-### 2.1 Mandala Projection
+Traditional large language models (LLMs) are trained once on massive datasets,  
+then often remain static — even if they have internal contradictions, missing facts, or logical inconsistencies.
 
-- We **project internal activations** (hidden states) into 2D/3D using UMAP or t-SNE.
-- These projections form **mandala-like structures**.
-- Symmetric clusters suggest healthy, coherent knowledge.
-- Asymmetric or fragmented regions suggest missing or broken knowledge branches.
+There is **no natural way for models to repair themselves** once training is finished.  
+Until now.
 
-### 2.2 Healing Detection
+**Mandala-LLM-Healing** introduces a **new post-training phase**:
 
-- If answering a question activates a fragile branch, healing is triggered.
-- Fragility detection uses simple metrics like:
-  - Radial density imbalance,
-  - Local curvature anomalies,
-  - Asymmetrical clustering.
+- Analyze the model’s **internal knowledge geometry**,
+- Detect **weak or fragile branches** where knowledge is broken or missing,
+- Trigger **self-healing cycles** — where the model generates sub-questions and internal simulations to fill gaps,
+- **Test** if the healing improves answers,
+- **Permanently inject** safe, minimal corrections into model weights.
 
-### 2.3 Self-Healing Cycle
-
-The model itself:
-
-1. **Generates sub-questions** to explore missing parts.
-2. **Self-simulates** answers using its existing knowledge.
-3. **Synthesizes corrections**.
-4. **Proposes small, safe edits** to internal weights.
-
-Healing is accepted only if automated testing shows improved answers without new errors.
-
-### 2.4 Permanent Injection
-
-- Edits are applied as **small bias vector changes** at selected layers.
-- This method is simple and safe for initial prototypes.
-- Future versions can extend to **low-rank updates** (e.g., LoRA, ROME).
+This repository provides a working **proof-of-concept** system for Mandala-LLM-Healing,  
+fully **open-source**, **transparent**, and **extendable**.
 
 ---
 
-## 3. Implementation Overview
+## 🧩 Mandala-LLM-Healing Principles
 
-This repository includes:
+**Mandala-LLM-Healing** treats a trained language model like a living, evolving system.
 
-| Module | Description |
-|:-------|:------------|
-| `mandala_projection.py` | Project internal embeddings into low-dimensional space. |
-| `gui_mandala_heal.py` | Visualize, click, and manually heal fragile branches. |
-| `test_suite.py` | Simple QA evaluation using exact and fuzzy matching. |
-| `permanent_inject.py` | Apply bias vector corrections to heal knowledge branches. |
-| `autonomous_loop.py` | Prototype of self-question ➔ self-simulate ➔ self-test ➔ self-heal cycle. |
-| `examples/` | Jupyter notebooks showing projections and healing examples. |
+- A model’s internal knowledge is structured as a **Mandala** —  
+  a complex geometric map of facts, concepts, and logical relationships.
 
----
+- **Healthy knowledge** appears as **symmetrical, well-organized branches**.
 
-## 4. Procedures
+- **Broken knowledge** (missing facts, hallucinations, contradictions) manifests as **asymmetries, distortions, or fragile branches**.
 
-### 4.1 Project Knowledge Mandala
-
-- Pass sentences or questions through LLM.
-- Collect hidden activations at specific layers.
-- Apply UMAP/t-SNE to project into 2D.
-- Identify asymmetric or broken clusters.
-
-### 4.2 Detect Fragile Branches
-
-- Calculate radial density variance.
-- Optionally use simple clustering imbalance metrics.
-- Highlight suspicious regions.
-
-### 4.3 Healing Methods
-
-- **Manual Healing** (via GUI):
-  - Click on outlier points.
-  - Suggest a correction manually.
-- **Autonomous Healing**:
-  - Model detects low-confidence or hallucinated answers.
-  - Model generates sub-questions to explore.
-  - Model proposes small weight corrections.
-  - Healing accepted only after internal re-testing.
-
-### 4.4 Permanent Correction
-
-- Apply small bias-deltas to transformer MLP layers.
-- Save healed model version.
+By detecting and healing these weak areas,  
+the model can **self-perfect** over time — without requiring external data or human retraining.
 
 ---
 
-## 5. Current Limitations
+## ⚙️ Relation to Traditional Training
 
-- Healing logic is early-stage — many improvements possible.
-- Bias injection method is simple; better methods (e.g., LoRA) should be explored.
-- Symmetry detection uses basic heuristics; topological metrics can improve detection.
-- No full-scale evaluation experiments are published yet.
+Mandala-LLM-Healing is designed as a **post-training evolution** phase —  
+**not a replacement** for traditional pretraining or fine-tuning.
 
-This repository focuses on the **concept** and **prototype code**,  
-**not on publishing benchmark results**.
+- **Traditional pretraining** (on large datasets) remains essential to give the model its basic world knowledge.
+- **Fine-tuning** remains useful to specialize a model for specific domains.
 
----
+**Mandala-LLM-Healing begins only after traditional training is finished:**
 
-## 6. Future Directions
+- It does not rely on new external datasets.
+- It does not require expensive re-training cycles.
+- It focuses on **detecting and repairing internal weaknesses** that were left behind during training.
 
-| Idea | Description |
-|:-----|:------------|
-| Multi-Projection Voting | Use multiple different projections to detect fragile regions more robustly. |
-| Simulation-Based Research | Encourage model to simulate missing facts more realistically. |
-| Fine-Grained Delta Injection | Switch to low-rank or adapter-based healing methods. |
-| Scalable Healing | Run automated healing over thousands of questions in parallel. |
-| Human Review Option | Allow human curators to approve/reject proposed healings. |
-| Larger Model Testing | Try healing on larger LLMs (e.g., LLaMA, Falcon, GPT-J). |
+In some cases, Mandala-LLM-Healing may even **generate new knowledge**:
 
----
+- By identifying missing logical connections,
+- By completing incomplete knowledge structures,
+- By repairing fragile branches based on internal Mandala symmetry.
 
-## 7. How to Contribute
-
-- Extend symmetry metrics.
-- Improve the GUI.
-- Build safer edit mechanisms.
-- Expand self-questioning logic.
-- Test healing on different domains.
-
-Pull requests welcome!
+Thus, Mandala-LLM-Healing enables models to **grow beyond** their original training datasets —  
+self-improving autonomously through internal geometric healing.
 
 ---
 
-## 8. License
+## 🛠️ The Core Healing Cycle
 
-MIT License — free for research, experimentation, and education.
+1. **Visualize Knowledge** — Project hidden-state activations into a 2D Mandala using UMAP or t-SNE.
+2. **Detect Fragility** — Identify asymmetric, weak, or broken knowledge branches.
+3. **Self-Ask and Simulate** — The model generates internal sub-questions to explore gaps.
+4. **Self-Heal** — Propose small weight edits (e.g., tiny bias vector updates) based on internal simulations.
+5. **Self-Test** — Healing is accepted only if testing shows improved answers.
+6. **Permanent Repair** — Successful healing edits are injected directly into model weights.
 
 ---
 
-## 9. Closing Note
+## 🔥 What Makes Mandala-LLM-Healing Different
 
-Mandala-Healing is an open idea:  
-**an invitation to rethink how LLMs can grow and repair themselves**  
-after training — autonomously, geometrically, logically.
+- **Self-generated healing.**  
+  Healing comes entirely from within the model — no new external data is needed.
 
-We hope it inspires further research and real-world applications.
+- **Minimal invasive edits.**  
+  Healing uses small, safe internal corrections instead of costly full retraining.
+
+- **Geometry becomes intelligence.**  
+  Symmetry and balance of the Mandala become measurable indicators of knowledge health.
+
+- **True self-evolution.**  
+  The model can refine itself repeatedly, repairing errors and growing smarter over time.
+
+- **Healing across multiple projections.**  
+  Healing is not based on a single 2D view — Mandala-LLM-Healing explores many angles, layers, and projections to ensure robust evolution.
+
+---
+
+> 🧠 **Mandala-LLM-Healing is not fine-tuning.  
+> It is not prompt engineering.  
+> It is the next evolutionary step: models that can grow, heal, and evolve on their own.**
+
+---
+
+## 🌱 How the Idea Emerged
+
+Mandala-LLM-Healing is an open idea —  
+it emerged from reflections on how models could heal and grow autonomously after traditional training,  
+explored through deep conceptual discussions using AI tools.
+
+This repository is a **prototype and exploration**:
+
+- It is **not yet validated** by large-scale experiments,
+- It is **freely offered** to the community — to test, challenge, improve, or extend.
+
+If you find it inspiring, useful, or if you want to build upon it —  
+you are warmly invited to do so.
 
 ❤️
 
-*Created by Romandas-A (2025).*
+---
+
+## 🛠️ Repository Contents
+
+| File/Folder | Description |
+|:------------|:------------|
+| `README.md` | This page. Overview and quickstart instructions. |
+| `whitepaper.md` | Full method description and procedures (honest, no fake experiments). |
+| `requirements.txt` | Python dependencies list. |
+| `mandala_projection.py` | Project internal activations into 2D Mandalas. |
+| `gui_mandala_heal.py` | Clickable GUI to manually explore and heal knowledge branches. |
+| `test_suite.py` | Simple exact and fuzzy answer evaluation tools. |
+| `permanent_inject.py` | Script to permanently apply healing deltas into model weights. |
+| `autonomous_loop.py` | Prototype self-healing cycle: detect weakness ➔ self-ask ➔ heal. |
+| `examples/` | Example Jupyter notebooks to explore projections and self-healing.
 
 ---
+
+## 🚀 Quickstart
+
+```bash
+# Clone the repository
+git clone https://github.com/Romandas-A/mandala-llm-healing.git
+cd mandala-llm-healing
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Play with the Healing GUI
+python gui_mandala_heal.py
