@@ -1,4 +1,27 @@
 # test_suite.py
+#
+# This script:
+# - Defines a small set of test question-answer (QA) pairs,
+# - Loads a GPT-2 model and tokenizer,
+# - Generates answers from the model for each test question,
+# - Scores the model outputs using:
+#   - Exact match (perfect string equality),
+#   - Fuzzy match (tolerating small differences, e.g., typos or slight wording changes),
+# - Calculates and prints an average test score across all examples.
+#
+# This module supports:
+# - Evaluating model quality before and after healing,
+# - Comparing original vs. healed models in a lightweight, simple way,
+# - Helping decide whether a healing operation should be accepted.
+#
+# ---
+# Part                      | What it does
+# ---------------------------|--------------------------------------------------------
+# load_model_and_tokenizer() | Loads GPT-2 model and tokenizer from Hugging Face.
+# model_answer()             | Generates an output for a given question using the model.
+# score_answer()             | Computes an exact/fuzzy score between model output and correct answer.
+# evaluate_model()           | Runs all tests, prints results, and computes final average score.
+# __main__ block             | Demonstrates model evaluation on the default QA set.
 
 from fuzzywuzzy import fuzz
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
