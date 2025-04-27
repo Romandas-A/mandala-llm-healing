@@ -129,3 +129,22 @@ pip install -r requirements.txt
 
 # Play with the Healing GUI
 python gui_mandala_heal.py
+
+---
+
+## 🌱 How the Idea Emerged
+
+Mandala-Healing is an open idea —  
+it was born while walking in a park and having conversations with ChatGPT,  
+thinking about how models could heal and grow after training.
+
+This repository is a **prototype and exploration**:  
+- It is **not yet proven** by large-scale experiments,
+- It is **offered freely** to the community to test, challenge, improve, or extend.
+
+If you find it inspiring, useful, or if you want to build on it —  
+you are warmly invited to do so.
+
+❤️
+
+*Romandas-A (2025)*
