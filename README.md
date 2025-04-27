@@ -16,6 +16,9 @@
 </p>
 
 ---
+<p align="center">
+  <img src="mandala_preview.png" alt="Mandala-LLM-Healing Visualization" width="600">
+</p>
 
 ## ✨ Overview
 
