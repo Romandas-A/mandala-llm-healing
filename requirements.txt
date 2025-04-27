@@ -1,0 +1,7 @@
+torch
+transformers
+umap-learn
+matplotlib
+fuzzywuzzy
+python-Levenshtein
+scikit-learn
