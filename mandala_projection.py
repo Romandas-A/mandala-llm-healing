@@ -1,4 +1,26 @@
 # mandala_projection.py
+#
+# This script:
+# - Loads a GPT-2 model and tokenizer,
+# - Extracts hidden state activations (sentence embeddings),
+# - Projects the high-dimensional hidden states into 2D space using UMAP,
+# - Provides simple visualization of the projected points ("Mandala view"),
+# - Calculates basic symmetry metrics like radial density imbalance to detect fragile knowledge regions.
+#
+# This module supports:
+# - Mandala visualization of model internal knowledge structures,
+# - Symmetry analysis to identify weak or missing knowledge branches,
+# - Preparation for detecting areas that may need healing.
+#
+# ---
+# Part                         | What it does
+# ------------------------------|--------------------------------------------------------
+# load_model_and_tokenizer()    | Loads GPT-2 model and tokenizer (with hidden states enabled).
+# get_sentence_embedding()      | Extracts mean hidden-state embedding for a given sentence.
+# project_sentences()           | Projects multiple sentence embeddings into 2D space using UMAP.
+# plot_projections()            | Draws a 2D scatter plot of projected knowledge points.
+# radial_density_imbalance()    | Calculates asymmetry score to detect fragile regions.
+# __main__ block                | Example usage: project and visualize sample sentences.
 
 import torch
 import numpy as np
